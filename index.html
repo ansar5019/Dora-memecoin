@@ -1,474 +1,549 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Dora - The Ultimate Memecoin Experience. Join the revolution!">
-    <meta name="theme-color" content="#FF6B6B">
-    <title>Dora Memecoin - The Future is Meme</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fish The Runner | $FISH</title>
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-        header {
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 2px solid #FF6B6B;
-        }
+<style>
 
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
 
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #FF6B6B;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+body{
 
-        .logo-emoji {
-            font-size: 2.2rem;
-        }
+font-family:Poppins,sans-serif;
+background:#02111d;
+color:white;
+overflow-x:hidden;
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-            font-weight: 500;
-        }
+/* Animated Ocean */
 
-        nav a:hover {
-            color: #FF6B6B;
-        }
+body::before{
 
-        .hero {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 80px 20px;
-            text-align: center;
-            color: white;
-        }
+content:"";
+position:fixed;
+width:300%;
+height:300%;
+left:-100%;
+top:-100%;
+background:
 
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            animation: fadeInDown 0.8s ease;
-        }
+radial-gradient(circle,#0bc5ff22 2px,transparent 2px),
+radial-gradient(circle,#00e0ff11 3px,transparent 3px);
 
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 40px;
-            opacity: 0.95;
-            animation: fadeInUp 0.8s ease;
-        }
+background-size:120px 120px;
 
-        .hero-emoji {
-            font-size: 5rem;
-            animation: bounce 2s infinite;
-            margin-bottom: 20px;
-        }
+animation:ocean 45s linear infinite;
 
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+z-index:-5;
 
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+}
 
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
+@keyframes ocean{
 
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            animation: fadeInUp 1s ease;
-        }
+0%{
 
-        .btn {
-            padding: 15px 40px;
-            font-size: 1.1rem;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-weight: bold;
-            text-decoration: none;
-            display: inline-block;
-        }
+transform:translate(0,0);
 
-        .btn-primary {
-            background: linear-gradient(135deg, #FF6B6B, #FF8E8E);
-            color: white;
-            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
-        }
+}
 
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
-        }
+100%{
 
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: 2px solid white;
-        }
+transform:translate(220px,120px);
 
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-3px);
-        }
+}
 
-        .features {
-            max-width: 1200px;
-            margin: 80px auto;
-            padding: 0 20px;
-        }
+}
 
-        .features h2 {
-            text-align: center;
-            color: white;
-            font-size: 2.5rem;
-            margin-bottom: 60px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
+/* Navigation */
 
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
+nav{
 
-        .feature-card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+position:fixed;
 
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-        }
+width:100%;
 
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 15px;
-        }
+display:flex;
 
-        .feature-card h3 {
-            color: #FF6B6B;
-            margin-bottom: 10px;
-            font-size: 1.5rem;
-        }
+justify-content:space-between;
 
-        .feature-card p {
-            color: #666;
-            line-height: 1.8;
-        }
+align-items:center;
 
-        .stats {
-            max-width: 1200px;
-            margin: 80px auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
+padding:20px 8%;
 
-        .stat-box {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
+backdrop-filter:blur(20px);
 
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #FF6B6B;
-            margin-bottom: 10px;
-        }
+background:rgba(0,0,0,.2);
 
-        .stat-label {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
+border-bottom:1px solid rgba(255,255,255,.08);
 
-        .roadmap {
-            max-width: 1200px;
-            margin: 80px auto;
-            padding: 0 20px;
-            background: white;
-            border-radius: 15px;
-            padding: 50px 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
+z-index:999;
 
-        .roadmap h2 {
-            color: #FF6B6B;
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-        }
+}
 
-        .roadmap-timeline {
-            position: relative;
-            padding: 20px 0;
-        }
+.logo{
 
-        .roadmap-item {
-            margin-bottom: 30px;
-            padding-left: 40px;
-            position: relative;
-        }
+font-family:Bungee;
 
-        .roadmap-item::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 20px;
-            height: 20px;
-            background: #FF6B6B;
-            border-radius: 50%;
-            border: 4px solid white;
-            box-shadow: 0 0 0 3px #FF6B6B;
-        }
+font-size:30px;
 
-        .roadmap-item h3 {
-            color: #FF6B6B;
-            margin-bottom: 10px;
-        }
+color:#00d4ff;
 
-        .roadmap-item p {
-            color: #666;
-        }
+text-shadow:0 0 25px #00d4ff;
 
-        footer {
-            background: rgba(0, 0, 0, 0.9);
-            color: white;
-            text-align: center;
-            padding: 40px 20px;
-            margin-top: 80px;
-            border-top: 2px solid #FF6B6B;
-        }
+}
 
-        .social-links {
-            margin: 20px 0;
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-        }
+nav ul{
 
-        .social-links a {
-            color: #FF6B6B;
-            text-decoration: none;
-            font-size: 1.3rem;
-            transition: transform 0.3s;
-        }
+display:flex;
 
-        .social-links a:hover {
-            transform: scale(1.2);
-        }
+gap:35px;
 
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
+list-style:none;
 
-            .hero p {
-                font-size: 1.1rem;
-            }
+}
 
-            .hero-emoji {
-                font-size: 3rem;
-            }
+nav a{
 
-            nav ul {
-                gap: 1rem;
-            }
+text-decoration:none;
 
-            nav ul li {
-                font-size: 0.9rem;
-            }
+color:white;
 
-            .cta-buttons {
-                flex-direction: column;
-            }
+transition:.3s;
 
-            .btn {
-                width: 100%;
-            }
-        }
-    </style>
+font-weight:600;
+
+}
+
+nav a:hover{
+
+color:#00d4ff;
+
+}
+
+/* Hero */
+
+.hero{
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.hero h1{
+
+font-family:Bungee;
+
+font-size:90px;
+
+color:#00d4ff;
+
+text-shadow:
+
+0 0 20px #00d4ff,
+
+0 0 60px #00d4ff;
+
+animation:glow 2s infinite alternate;
+
+}
+
+@keyframes glow{
+
+100%{
+
+text-shadow:
+
+0 0 30px #00ffff,
+
+0 0 90px #00ffff,
+
+0 0 120px #00ffff;
+
+}
+
+}
+
+.hero p{
+
+font-size:24px;
+
+max-width:800px;
+
+margin:30px auto;
+
+line-height:1.8;
+
+opacity:.9;
+
+}
+
+.button{
+
+display:inline-block;
+
+padding:18px 50px;
+
+margin:12px;
+
+background:linear-gradient(45deg,#00bfff,#00ffd5);
+
+color:#00131f;
+
+border-radius:50px;
+
+font-weight:700;
+
+text-decoration:none;
+
+transition:.4s;
+
+box-shadow:0 0 35px #00bfff66;
+
+}
+
+.button:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 0 60px #00ffff;
+
+}
+
+/* Floating bubbles */
+
+.bubble{
+
+position:absolute;
+
+bottom:-120px;
+
+border-radius:50%;
+
+background:rgba(0,212,255,.2);
+
+animation:float linear infinite;
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0) scale(.4);
+
+opacity:0;
+
+}
+
+30%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-120vh) scale(1);
+
+opacity:0;
+
+}
+
+}
+
+/* Glass cards */
+
+section{
+
+padding:120px 10%;
+
+}
+
+.title{
+
+font-family:Bungee;
+
+font-size:48px;
+
+margin-bottom:40px;
+
+color:#00d4ff;
+
+}
+
+.grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+gap:30px;
+
+}
+
+.card{
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(18px);
+
+padding:35px;
+
+border-radius:25px;
+
+border:1px solid rgba(255,255,255,.1);
+
+transition:.4s;
+
+}
+
+.card:hover{
+
+transform:translateY(-12px);
+
+box-shadow:0 0 45px #00d4ff55;
+
+}
+
+.card h3{
+
+font-size:28px;
+
+margin-bottom:15px;
+
+color:#00d4ff;
+
+}
+
+.tokenomics{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:25px;
+
+}
+
+.token{
+
+background:linear-gradient(180deg,#04283c,#02111d);
+
+padding:35px;
+
+border-radius:20px;
+
+text-align:center;
+
+border:1px solid #0bc5ff33;
+
+}
+
+.token h2{
+
+font-size:46px;
+
+color:#00d4ff;
+
+margin-bottom:15px;
+
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+.hero h1{
+
+font-size:52px;
+
+}
+
+.tokenomics{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+nav ul{
+
+display:none;
+
+}
+
+}
+
+</style>
+
 </head>
+
 <body>
-    <!-- Navigation -->
-    <header>
-        <nav>
-            <a href="#" class="logo">
-                <span class="logo-emoji">🚀</span>
-                <span>DORA</span>
-            </a>
-            <ul>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#stats">Stats</a></li>
-                <li><a href="#roadmap">Roadmap</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-emoji">🐕</div>
-        <h1>Welcome to DORA Memecoin</h1>
-        <p>The most hilarious and rewarding cryptocurrency experience on the blockchain!</p>
-        <div class="cta-buttons">
-            <button class="btn btn-primary">Buy Now</button>
-            <button class="btn btn-secondary">Learn More</button>
-        </div>
-    </section>
+<nav>
 
-    <!-- Features Section -->
-    <section class="features" id="features">
-        <h2>Why Choose DORA?</h2>
-        <div class="feature-grid">
-            <div class="feature-card">
-                <div class="feature-icon">💰</div>
-                <h3>Massive Rewards</h3>
-                <p>Earn incredible returns on your investment with our unique reward system.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🔒</div>
-                <h3>Secure & Safe</h3>
-                <p>Built on blockchain technology with multi-signature wallets for maximum security.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🌍</div>
-                <h3>Global Community</h3>
-                <p>Join thousands of hodlers from around the world in our thriving community.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📈</div>
-                <h3>Transparent Growth</h3>
-                <p>Real-time analytics and charts to track your investment growth.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">⚡</div>
-                <h3>Lightning Fast</h3>
-                <p>Instant transactions with minimal fees on a high-speed network.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🎁</div>
-                <h3>Exclusive Perks</h3>
-                <p>Special bonuses and airdrops for our loyal community members.</p>
-            </div>
-        </div>
-    </section>
+<div class="logo">🎣 $FISH</div>
 
-    <!-- Stats Section -->
-    <section class="stats" id="stats">
-        <div class="stat-box">
-            <div class="stat-number">500K+</div>
-            <div class="stat-label">Active Holders</div>
-        </div>
-        <div class="stat-box">
-            <div class="stat-number">$2.5M</div>
-            <div class="stat-label">Market Cap</div>
-        </div>
-        <div class="stat-box">
-            <div class="stat-number">150+</div>
-            <div class="stat-label">Countries</div>
-        </div>
-        <div class="stat-box">
-            <div class="stat-number">24/7</div>
-            <div class="stat-label">Trading</div>
-        </div>
-    </section>
+<ul>
 
-    <!-- Roadmap Section -->
-    <section class="roadmap" id="roadmap">
-        <h2>Our Roadmap</h2>
-        <div class="roadmap-timeline">
-            <div class="roadmap-item">
-                <h3>Q1 2024 - Launch</h3>
-                <p>Initial token launch and exchange listings on major platforms.</p>
-            </div>
-            <div class="roadmap-item">
-                <h3>Q2 2024 - Community Growth</h3>
-                <p>Expand community through marketing and partnerships. Launch staking program.</p>
-            </div>
-            <div class="roadmap-item">
-                <h3>Q3 2024 - DeFi Integration</h3>
-                <p>Launch DeFi features including liquidity pools and yield farming.</p>
-            </div>
-            <div class="roadmap-item">
-                <h3>Q4 2024 - Mobile App</h3>
-                <p>Release native mobile applications for iOS and Android platforms.</p>
-            </div>
-            <div class="roadmap-item">
-                <h3>Q1 2025 - NFT Marketplace</h3>
-                <p>Launch NFT marketplace exclusive to DORA community members.</p>
-            </div>
-        </div>
-    </section>
+<li><a href="#about">About</a></li>
 
-    <!-- Footer -->
-    <footer id="contact">
-        <h3>DORA Memecoin</h3>
-        <p>Join the revolution. Be part of the future.</p>
-        <div class="social-links">
-            <a href="https://twitter.com" target="_blank" title="Twitter">𝕏</a>
-            <a href="https://telegram.org" target="_blank" title="Telegram">📱</a>
-            <a href="https://discord.com" target="_blank" title="Discord">💬</a>
-            <a href="https://github.com" target="_blank" title="GitHub">🐙</a>
-        </div>
-        <p style="margin-top: 20px; opacity: 0.7;">&copy; 2024 DORA Memecoin. All rights reserved.</p>
-        <p style="opacity: 0.5; font-size: 0.9rem;">⚠️ Disclaimer: This is a memecoin project. Investment involves risk.</p>
-    </footer>
-</body>
-</html>
+<li><a href="#tokenomics">Tokenomics</a></li>
+
+<li><a href="#roadmap">Roadmap</a></li>
+
+<li><a href="#buy">Buy</a></li>
+
+</ul>
+
+</nav>
+
+<!-- Floating bubbles -->
+
+<div class="bubble" style="left:10%;width:18px;height:18px;animation-duration:11s;"></div>
+<div class="bubble" style="left:28%;width:30px;height:30px;animation-duration:15s;"></div>
+<div class="bubble" style="left:44%;width:22px;height:22px;animation-duration:18s;"></div>
+<div class="bubble" style="left:61%;width:15px;height:15px;animation-duration:10s;"></div>
+<div class="bubble" style="left:77%;width:35px;height:35px;animation-duration:20s;"></div>
+<div class="bubble" style="left:92%;width:25px;height:25px;animation-duration:14s;"></div>
+
+<section class="hero">
+
+<div>
+
+<h1>FISH THE RUNNER</h1>
+
+<p>
+
+The ocean is full of opportunities.
+
+Only one catches the next runner.
+
+Inspired by one legendary tweet,
+
+powered by an unstoppable community.
+
+</p>
+
+<a href="#" class="button">🎣 BUY $FISH</a>
+
+<a href="#" class="button">📈 VIEW CHART</a>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<h2 class="title">
+
+🌊 THE STORY
+
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>One Tweet</h3>
+
+<p>
+
+"We're fishing for the next runner."
+
+That single sentence inspired an entire movement.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>One Community</h3>
+
+<p>
+
+No insiders.
+
+No venture capital.
+
+Just thousands of degens casting their lines together.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>One Mission</h3>
+
+<p>
+
+Catch the biggest runner before everyone else.
+
+Every whale starts as a small fish.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="tokenomics">
+
+<h2 class="title">
+
+📊 TOKENOMICS
+
+</h2>
+
+<div class="tokenomics">
+
+<div class="token">
+<h2>1B</h2>
+<p>Total Supply</p>
+</div>
+
+<div class="token">
+<h2>0%</h2>
+<p>Buy Tax</p>
+</div>
+
+<div class="token">
+<h2>0%</h2>
+<p>Sell Tax</p>
+</div>
+
+<div class="token">
+<h2>🔒</h2>
+<p>Liquidity Locked</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- PART 2 CONTINUES -->

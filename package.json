@@ -1,0 +1,21 @@
+{
+  "name": "dora-memecoin",
+  "version": "1.0.0",
+  "description": "Fish The Runner | $FISH - Memecoin landing page",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "echo 'Static site - no build needed'",
+    "lint": "echo 'No linter configured'"
+  },
+  "keywords": [
+    "memecoin",
+    "fish",
+    "crypto"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vercel/analytics": "^1.3.1"
+  }
+}
